@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html>
+<!--
+                           __                   _
+   ____ __________ _____  / /_  ___  ____ ___  (_)________ _
+  / __ `/ ___/ __ `/ __ \/ __ \/ _ \/ __ `__ \/ / ___/ __ `/
+ / /_/ / /  / /_/ / /_/ / / / /  __/ / / / / / / /__/ /_/ /
+ \__, /_/   \__,_/ .___/_/ /_/\___/_/ /_/ /_/_/\___/\__,_/
+ /____/          /_/
+-->
+
+<!-- Conditional comment for mobile ie7 blogs.msdn.com/b/iemobile/ -->
+<!--[if IEMobile 7 ]>    <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset='utf-8'>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"b0947b6167","applicationID":"1424050","transactionName":"c1cNF0VYXlUEQBYHUVFKAgBDUkBKTkFRC04=","queueTime":20,"applicationTime":345,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"b0947b6167",applicationID:"1424050"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<title>Ỹ | latin capital letter y with tilde (U+1EF8) @ Graphemica</title>
+<meta content='Ỹ |  | latin capital letter y with tilde (U+1EF8) @ Graphemica' name='description'>
+<meta content='yes' name='mobile-web-app-capable'>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<meta content='Graphemica' name='application-name'>
+<meta content='Graphemica' name='apple-mobile-web-app-title'>
+<link href='/assets/touch/apple-touch-icon-144x144-precomposed-cb831dcbe08c4236e3e1a01b963494acf6edfac3069213d49ecc9dc8ece7cf83.png' rel='apple-touch-icon-precomposed' sizes='144x144'>
+<link href='/assets/touch/apple-touch-icon-114x114-precomposed-18a1cefc527874a906a94525ec40b53d39fe17375a24d95e6c33d60b3b82c2ec.png' rel='apple-touch-icon-precomposed' sizes='114x114'>
+<link href='/assets/touch/apple-touch-icon-72x72-precomposed-a79a0d3fd3362eb767ec5b7e64d82c1a7e2e318ff435efe0dbfb8f2cd481c0a8.png' rel='apple-touch-icon-precomposed' sizes='72x72'>
+<link href='/assets/touch/apple-touch-icon-57x57-precomposed-1d30e9566d5d3887544677b297a349788efb4dffed77aa5356ff167c36c6342b.png' rel='apple-touch-icon-precomposed'>
+<link href='/assets/touch/touch-icon-196x196-baafab9970d0a1526c213368c5f658738dfc3195b8bfd8709bdae9381b89600c.png' rel='shortcut icon' sizes='196x196'>
+<link href='/assets/touch/apple-touch-icon-206fc78ca353cc7cd0c31bbff38dd8e03ae5b642171da564b045bc64d6210841.png' rel='shortcut icon'>
+<!-- Tile icon for Win8 (144x144 + tile color) -->
+<meta content='/assets/touch/apple-touch-icon-144x144-precomposed-cb831dcbe08c4236e3e1a01b963494acf6edfac3069213d49ecc9dc8ece7cf83.png' name='msapplication-TileImage'>
+<meta content='#FFF' name='msapplication-TileColor'>
+<meta content='on' http-equiv='cleartype'>
+<link href='https://graphemica.com/%E1%BB%B8.atom' rel='alternate' title='Graphemica / Ỹ' type='application/rss+xml'>
+<link rel="stylesheet" media="all" href="/assets/application-2d232486f5484337a76939c1edb6d27bdc99b0d7ca97237de2011251f8951806.css" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans&amp;text=Ỹ);
+  body .char {
+    font-family: "Times", "Times New Roman", "Open Sans", "serif", "sans-serif";
+  }
+</style>
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="va2Ugbpu6xg5re63HjiTaolqhR9lgVDRtKAxejKCh1NUnXpvGKUlocOAUB9wDmxE7SQwIXehRu8lv4XULlCRPQ==" />
+
+<script src="/assets/mbp-9a20d4099c62dda4f2ec73acd017f73c0afbe4320a72286e2f3bb35acb6a15dc.js"></script>
+<!--[if lt IE 9]>
+<script src="/assets/html5shiv-b63364bcae1b20fd69b6e866b2ad5137eadef5def444160698dd96668ef04e90.js"></script>
+<![endif]-->
+<script>
+  window.Graphemica = window.Graphemica || {}
+  window.Graphemica['currentUser'] = ""
+</script>
+<script src="/assets/application-ca9ad5b544f1ab14f640e79d585e53f27b49ef68351e971e9e0fbf25f5c08d48.js"></script>
+</head>
+
+<body class='characters show'>
+<div id='site-header'>
+<div class='nav'>
+<div id='global-nav'>
+<div class='nav-element' id='identity'>
+<a href='/'>
+G
+</a>
+</div>
+</div>
+<form accept-charset='UTF-8' action='/search' id='global-search' method='get'>
+<div class='nav-element' id='search-icon'>
+<label for='global-q'>
+<i></i>
+</label>
+</div>
+<input autocapitalize='off' autocomplete='off' id='global-q' name='q' placeholder='Search' type='text'>
+</form>
+<div class='actions'>
+<div class='nav-element' id='random'>
+<a href='/%E2%9F%8C'>
+<i></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div id='auth-header'>
+<div id='auth-header-container'>
+<div id='flash-alerts'>
+</div>
+<div id='authentication'>
+<ol>
+<li id='login'>
+<a href='/login'>
+Sign In
+</a>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div class='main'>
+<article>
+<header id='character-header'>
+<h1 class='char Latn U1EF8' data-text='Ỹ' id='h1-display-char'>
+Ỹ
+</h1>
+<h2 class='char-title'>
+latin capital letter y with tilde (U+1EF8)
+</h2>
+<div id='actions'>
+<section id='likes'>
+<a class='like' href='/%E1%BB%B8/likes' method='post' rel='nowfollow'>
+<i class='icon-like'></i>
+</a>
+</section>
+
+</div>
+<section class='info'>
+<div class='unicode-nav'>
+<a href="/%E1%BB%B7">
+          <i class="icon-left-open-3"></i>
+          <span class="character char">ỷ</span>
+          <span class="code-point">U+1EF7</span>
+        </a> • <a href="/%E1%BB%B9">
+          <span class="code-point">U+1EF9</span>
+          <span class="character char">ỹ</span>
+          <i class="icon-right-open-3""></i>
+        </a>
+</div>
+</section>
+</header>
+<section id='characteristics'>
+<section class='info-box info-table' id='information'>
+<table cellpadding='0' cellspacing='0'>
+<tr>
+<td class='name'>
+Unicode Code Point
+</td>
+<td class='value'>
+U+1EF8
+</td>
+</tr>
+<tr>
+<td class='name'>
+Script
+</td>
+<td class='value'>
+<a href="/scripts/latin">Latin</a>
+</td>
+</tr>
+<tr>
+<td class='name'>
+Category
+</td>
+<td class='value'>
+<a href="/categories/uppercase-letter">Uppercase Letter</a>
+</td>
+</tr>
+<tr>
+<td class='name'>
+Block
+</td>
+<td class='value'>
+<a href="/blocks/latin-extended-additional">Latin Extended Additional</a>
+</td>
+</tr>
+<tr>
+<td class='name'>
+HTML Entity (Decimal)
+</td>
+<td class='value'>
+&amp;#7928;
+<span class='clipable' data-text='&amp;#7928;' id='clipable-decimal_html_entity-1EF8' style='display: none;'>
+c
+</span>
+</td>
+</tr>
+<tr>
+<td class='name'>
+HTML Entity (Hexadecimal)
+</td>
+<td class='value'>
+&amp;#x1EF8;
+<span class='clipable' data-text='&amp;#x1EF8;' id='clipable-hex_html_entity-1EF8' style='display: none;'>
+c
+</span>
+</td>
+</tr>
+<tr>
+<td class='name'>
+URL Escape Code
+</td>
+<td class='value'>
+%E1%BB%B8
+<span class='clipable' data-text='%E1%BB%B8' id='clipable-url_escape_code-1EF8' style='display: none;'>
+c
+</span>
+</td>
+</tr>
+</table>
+</section>
+<section class='info-box info-table' id='casing'>
+<h3>Casing</h3>
+<table cellpadding='0' cellspacing='0'>
+<tr>
+<td class='name'>
+Case
+</td>
+<td class='value'>
+Uppercase
+</td>
+</tr>
+<tr>
+<td class='name'>
+Lowercase Character
+</td>
+<td class='value'>
+<a href='/%E1%BB%B9'>
+ỹ
+</a>
+</td>
+</tr>
+</table>
+</section>
+</section>
+<section id='glyphs'>
+<h3>Glyphs</h3>
+<article class='glyph'>
+<a href='/%E1%BB%B8/glyphs/dejavu-sans-book'>
+<div class='glyph-image'>
+<img alt="Ỹ | DejaVu Sans, Book" src="//s3.amazonaws.com/static.graphemica.com/glyphs/i50s/000/004/439/original/1EF8-50x50.png?1275294514" />
+</div>
+</a>
+<span class='font-name'>
+<a href="/%E1%BB%B8/glyphs/dejavu-sans-book">DejaVu Sans, Book</a>
+</span>
+</article>
+<article class='glyph'>
+<a href='/%E1%BB%B8/glyphs/dejavu-serif-book'>
+<div class='glyph-image'>
+<img alt="Ỹ | DejaVu Serif, Book" src="//s3.amazonaws.com/static.graphemica.com/glyphs/i50s/000/008/601/original/1EF8-50x50.png?1275322610" />
+</div>
+</a>
+<span class='font-name'>
+<a href="/%E1%BB%B8/glyphs/dejavu-serif-book">DejaVu Serif, Book</a>
+</span>
+</article>
+<article class='glyph'>
+<a href='/%E1%BB%B8/glyphs/times-new-roman-regular'>
+<div class='glyph-image'>
+<img alt="Ỹ | Times New Roman, Regular" src="//s3.amazonaws.com/static.graphemica.com/glyphs/i50s/000/012/191/original/1EF8-50x50.png?1275330840" />
+</div>
+</a>
+<span class='font-name'>
+<a href="/%E1%BB%B8/glyphs/times-new-roman-regular">Times New Roman, Regular</a>
+</span>
+</article>
+
+</section>
+<section id='comments'>
+<h3>Comments</h3>
+
+<span class='login-to-perform-action'><a href="/login">Login</a> or <a href="/signup">Sign up</a> to comment.</span>
+</section>
+<section class='info-box' id='tags'>
+<h3>Tags</h3>
+<span class='login-to-perform-action'><a href="/login">Login</a> or <a href="/signup">Sign up</a> to tag this character.</span>
+</section>
+<section id='related'>
+<h3>Related Characters</h3>
+<article class='related-character'>
+<section class='char Latn U0059'>
+<a href='/Y'>
+Y
+</a>
+</section>
+<section class='name'>
+<a class='name' href='/Y'>
+latin capital letter y
+</a>
+</section>
+<section class='code-point'>
+<a class='code-point' href='/Y'>
+U+0059
+</a>
+</section>
+</article>
+<article class='related-character'>
+<section class='char Zinh U0303'>
+<a href='/unicode/0303'>
+̃
+</a>
+</section>
+<section class='name'>
+<a class='name' href='/unicode/0303'>
+combining tilde
+</a>
+</section>
+<section class='code-point'>
+<a class='code-point' href='/unicode/0303'>
+U+0303
+</a>
+</section>
+</article>
+<article class='related-character'>
+<section class='char Latn U1EF9'>
+<a href='/%E1%BB%B9'>
+ỹ
+</a>
+</section>
+<section class='name'>
+<a class='name' href='/%E1%BB%B9'>
+latin small letter y with tilde
+</a>
+</section>
+<section class='code-point'>
+<a class='code-point' href='/%E1%BB%B9'>
+U+1EF9
+</a>
+</section>
+</article>
+
+</section>
+<section id='data'>
+<section id='additional-data'>
+<h3>Unicode Data</h3>
+<table cellpadding='0' cellspacing='0'>
+<tr>
+<td class='name'>
+Bidi Class
+</td>
+<td class='value'>
+Left To Right (L)
+</td>
+</tr>
+<tr>
+<td class='name'>
+Bidi Mirrored
+</td>
+<td class='value'>
+N
+</td>
+</tr>
+<tr>
+<td class='name'>
+Decomposition Mapping
+</td>
+<td class='value'>
+<a href="/unicode/Y">U+0059</a> <a href="/unicode/0303">U+0303</a>
+</td>
+</tr>
+</table>
+</section>
+<section id='encodings'>
+<h3>Encodings</h3>
+<table cellpadding='0' cellspacing='0'>
+<tr>
+<td class='name'>
+HTML Entity (Decimal)
+</td>
+<td class='value'>
+&amp;#7928;
+</td>
+</tr>
+<tr>
+<td class='name'>
+HTML Entity (Hexadecimal)
+</td>
+<td class='value'>
+&amp;#x1EF8;
+</td>
+</tr>
+<tr>
+<td class='name'>
+URL Escape Code
+</td>
+<td class='value'>
+%E1%BB%B8
+</td>
+</tr>
+<tr>
+<td class='name'>
+UTF-8 (hex)
+</td>
+<td class='value'>
+0xE1 0xBB 0xB8 (e1bbb8)
+</td>
+</tr>
+<tr>
+<td class='name'>
+UTF-8 (binary)
+</td>
+<td class='value'>
+11100001:10111011:10111000
+</td>
+</tr>
+<tr>
+<td class='name'>
+UTF-16/UTF-16BE (hex)
+</td>
+<td class='value'>
+0x1EF8 (1ef8)
+</td>
+</tr>
+<tr>
+<td class='name'>
+UTF-16LE (hex)
+</td>
+<td class='value'>
+0xF81E (f81e)
+</td>
+</tr>
+<tr>
+<td class='name'>
+UTF-32/UTF-32BE (hex)
+</td>
+<td class='value'>
+0x00001EF8 (00001ef8)
+</td>
+</tr>
+<tr>
+<td class='name'>
+UTF-32LE (hex)
+</td>
+<td class='value'>
+0xF81E0000 (f81e0000)
+</td>
+</tr>
+<tr>
+<td class='name'>
+Octal Escape Sequence
+</td>
+<td class='value'>
+\341\273\270
+</td>
+</tr>
+</table>
+</section>
+<section id='programming-languages'>
+<h3>Source Code</h3>
+<table cellpadding='0' cellspacing='0'>
+<tr>
+<td class='name'>
+JavaScript and JSON
+</td>
+<td class='value'>
+\u1EF8
+<span class='clipable' data-text='\u1EF8' id='clipable-javascript_json_representation-1EF8' style='display: none;'></span>
+</td>
+</tr>
+<tr>
+<td class='name'>
+C, C++, and Java
+</td>
+<td class='value'>
+\u1EF8
+<span class='clipable' data-text='\u1EF8' id='clipable-c_cpp_java_representation-1EF8' style='display: none;'></span>
+</td>
+</tr>
+<tr>
+<td class='name'>
+Python
+</td>
+<td class='value'>
+\u1EF8
+<span class='clipable' data-text='\u1EF8' id='clipable-python_representation-1EF8' style='display: none;'>
+c
+</span>
+</td>
+</tr>
+<tr>
+<td class='name'>
+Perl
+</td>
+<td class='value'>
+\x{1EF8}
+<span class='clipable' data-text='\x{1EF8}' id='clipable-perl_representation-1EF8' style='display: none;'>
+c
+</span>
+</td>
+</tr>
+<tr>
+<td class='name'>
+Ruby
+</td>
+<td class='value'>
+\u{1EF8}
+<span class='clipable' data-text='\u{1EF8}' id='clipable-ruby_representation-1EF8' style='display: none;'>
+c
+</span>
+</td>
+</tr>
+<tr>
+<td class='name'>
+CSS
+</td>
+<td class='value'>
+\001EF8
+<span class='clipable' data-text='\001EF8' id='clipable-css_representation-1EF8' style='display: none;'>
+c
+</span>
+</td>
+</tr>
+</table>
+</section>
+<section id='unicode-fields'>
+<h3>Raw Unicode Data</h3>
+<table cellpadding='0' cellspacing='0'>
+<tr>
+<th>Key</th>
+<th>Name</th>
+<th>Value</th>
+</tr>
+<tr>
+<td>
+age
+</td>
+<td></td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>
+AHex
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Alpha
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+bc
+</td>
+<td></td>
+<td>L</td>
+</tr>
+<tr>
+<td>
+Bidi_C
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Bidi_M
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+blk
+</td>
+<td></td>
+<td>Latin_Ext_Additional</td>
+</tr>
+<tr>
+<td>
+Cased
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+ccc
+</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>
+CE
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+cf
+</td>
+<td></td>
+<td>1EF9</td>
+</tr>
+<tr>
+<td>
+CI
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Comp_Ex
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+cp
+</td>
+<td>cp</td>
+<td>1EF8</td>
+</tr>
+<tr>
+<td>
+CWCF
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+CWCM
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+CWKCF
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+CWL
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+CWT
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+CWU
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Dash
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Dep
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+DI
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Dia
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+dm
+</td>
+<td></td>
+<td>0059 0303</td>
+</tr>
+<tr>
+<td>
+dt
+</td>
+<td></td>
+<td>can</td>
+</tr>
+<tr>
+<td>
+ea
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Ext
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+FC_NFKC
+</td>
+<td></td>
+<td>#</td>
+</tr>
+<tr>
+<td>
+gc
+</td>
+<td>
+<a href='/categories'>
+
+</a>
+</td>
+<td>
+<a href='/categories/uppercase-letter'>Lu</a>
+</td>
+</tr>
+<tr>
+<td>
+GCB
+</td>
+<td></td>
+<td>XX</td>
+</tr>
+<tr>
+<td>
+Gr_Base
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+Gr_Ext
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Gr_Link
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Hex
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+hst
+</td>
+<td></td>
+<td>NA</td>
+</tr>
+<tr>
+<td>
+Hyphen
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+IDC
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+Ideo
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+IDS
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+IDSB
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+IDST
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+InMC
+</td>
+<td>InMC</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>
+InSC
+</td>
+<td></td>
+<td>Other</td>
+</tr>
+<tr>
+<td>
+jg
+</td>
+<td></td>
+<td>No_Joining_Group</td>
+</tr>
+<tr>
+<td>
+Join_C
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+jt
+</td>
+<td></td>
+<td>U</td>
+</tr>
+<tr>
+<td>
+lb
+</td>
+<td></td>
+<td>AL</td>
+</tr>
+<tr>
+<td>
+lc
+</td>
+<td></td>
+<td>1EF9</td>
+</tr>
+<tr>
+<td>
+LOE
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Lower
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Math
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+na
+</td>
+<td></td>
+<td>LATIN CAPITAL LETTER Y WITH TILDE</td>
+</tr>
+<tr>
+<td>
+NChar
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+NFC_QC
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+NFD_QC
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+NFKC_CF
+</td>
+<td></td>
+<td>1EF9</td>
+</tr>
+<tr>
+<td>
+NFKC_QC
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+NFKD_QC
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+nt
+</td>
+<td></td>
+<td>None</td>
+</tr>
+<tr>
+<td>
+nv
+</td>
+<td></td>
+<td>NaN</td>
+</tr>
+<tr>
+<td>
+OAlpha
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+ODI
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+OGr_Ext
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+OIDC
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+OIDS
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+OLower
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+OMath
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+OUpper
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Pat_Syn
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Pat_WS
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+QMark
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Radical
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+SB
+</td>
+<td></td>
+<td>UP</td>
+</tr>
+<tr>
+<td>
+sc
+</td>
+<td></td>
+<td>Latn</td>
+</tr>
+<tr>
+<td>
+scf
+</td>
+<td></td>
+<td>1EF9</td>
+</tr>
+<tr>
+<td>
+scx
+</td>
+<td></td>
+<td>Latn</td>
+</tr>
+<tr>
+<td>
+SD
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+slc
+</td>
+<td></td>
+<td>1EF9</td>
+</tr>
+<tr>
+<td>
+stc
+</td>
+<td></td>
+<td>#</td>
+</tr>
+<tr>
+<td>
+STerm
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+suc
+</td>
+<td></td>
+<td>#</td>
+</tr>
+<tr>
+<td>
+tc
+</td>
+<td></td>
+<td>#</td>
+</tr>
+<tr>
+<td>
+Term
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+uc
+</td>
+<td></td>
+<td>#</td>
+</tr>
+<tr>
+<td>
+UIdeo
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+Upper
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+VS
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+WB
+</td>
+<td></td>
+<td>LE</td>
+</tr>
+<tr>
+<td>
+WSpace
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+XIDC
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+XIDS
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+XO_NFC
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+XO_NFD
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+XO_NFKC
+</td>
+<td></td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+XO_NFKD
+</td>
+<td></td>
+<td>Y</td>
+</tr>
+</table>
+</section>
+</section>
+</article>
+
+</div>
+<div id='flash-test'></div>
+<script type="text/javascript">
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-190590-7', 'graphemica.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
